@@ -33,7 +33,7 @@ func TestFindIndex(t *testing.T) {
 	index = -1
 	testIndex = FindIndex(haystack, term)
 	if testIndex != -1 {
-		t.Fatalf("%s index %d is not %d\n", term, testIndex, index)
+		t.Fatalf("%s index %d is not equal to %d\n", term, testIndex, index)
 	}
 }
 
@@ -44,7 +44,7 @@ func TestBubbleSort(t *testing.T) {
 	sorted := []int{2, 3, 5, 7, 9}
 	testSort := BubbleSort(unsorted)
 	if !reflect.DeepEqual(testSort, sorted) {
-		t.Fatalf("%v and %v are not equal", testSort, sorted)
+		t.Fatalf("%v is not equal to %v", testSort, sorted)
 	}
 }
 
@@ -55,6 +55,6 @@ func TestQuickSort(t *testing.T) {
 	sorted := []int{2, 3, 5, 7, 9}
 	testSort := QuickSort(unsorted)
 	if !reflect.DeepEqual(testSort, sorted) {
-		t.Fatalf("%v and %v are not equal", testSort, sorted)
+		t.Fatalf("%v is not equal to %v", testSort, sorted)
 	}
 }
