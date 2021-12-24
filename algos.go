@@ -1,24 +1,16 @@
 package algos
 
 import (
-	"fmt"
 	"math/rand"
 )
 
-func SearchList(list []string, terms ...string) {
-	for _, term := range terms {
-		index := -1
-		for i, s := range list {
-			if s == term {
-				index = i
-				fmt.Printf("%s found at index %d\n", term, index)
-				// break
-			}
-		}
-		if index == -1 {
-			fmt.Printf("%s is not in list\n", term)
+func FindIndex(list []string, term string) int {
+	for index, item := range list {
+		if item == term {
+			return index
 		}
 	}
+	return -1
 }
 
 // Bubble sort a list of integers

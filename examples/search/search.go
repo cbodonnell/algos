@@ -1,6 +1,10 @@
 package main
 
-import "github.com/cheebz/algos"
+import (
+	"fmt"
+
+	"github.com/cheebz/algos"
+)
 
 func main() {
 	var haystack = []string{"Zig", "Zag", "Wally", "Ronald", "Bush", "Krusty",
@@ -10,11 +14,17 @@ func main() {
 		"bar", "thud", "grunt", "foo", "bar", "bletch", "foo", "bar", "fum",
 		"fred", "jim", "sheila", "barney", "flarp", "zxc", "spqr", ";wombat",
 		"shme", "foo", "bar", "baz", "bongo", "spam", "eggs", "snork", "foo",
-		"bar", "zot", "blarg", "wibble", "toto", "titi", "tata", "tutu", "pippo",
+		"bar", "zot", "blarg", "needle", "toto", "titi", "tata", "tutu", "pippo",
 		"pluto", "paperino", "aap", "noot", "mies", "oogle", "foogle", "boogle",
 		"zork", "gork", "bork", "sodium", "phosphorous", "californium",
 		"copernicium", "gold", "thallium", "carbon", "silver", "gold", "copper",
 		"helium", "sulfur"}
 
-	algos.SearchList(haystack, "foo", "needle", "bar")
+	term := "needle"
+	index := algos.FindIndex(haystack, term)
+	if index > -1 {
+		fmt.Printf("Found %s at index %d\n", term, index)
+	} else {
+		fmt.Printf("%s not in list\n", term)
+	}
 }
