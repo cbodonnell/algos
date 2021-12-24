@@ -1,9 +1,15 @@
+/*
+Package algos provides some common utility algorithms
+suited for general use in applications.
+*/
 package algos
 
 import (
 	"math/rand"
 )
 
+// FindIndex returns the index of a string in a list
+// or returns -1 if the string is not present in the list.
 func FindIndex(list []string, term string) int {
 	for index, item := range list {
 		if item == term {
@@ -13,7 +19,7 @@ func FindIndex(list []string, term string) int {
 	return -1
 }
 
-// Bubble sort a list of integers
+// BubbleSort sorts a list of integers
 func BubbleSort(list []int) []int {
 	for {
 		hasChanged := false
@@ -30,7 +36,7 @@ func BubbleSort(list []int) []int {
 	return list
 }
 
-// Quick sort a list of integers
+// QuickSort sorts a list of integers
 func QuickSort(list []int) []int {
 	quickSortHelper(list, 0, len(list)-1)
 	return list
