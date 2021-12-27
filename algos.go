@@ -19,6 +19,14 @@ func FindIndex(list []string, term string) int {
 	return -1
 }
 
+func ReverseString(s string) string {
+	runes := []rune(s)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
+}
+
 // BubbleSort sorts a list of integers
 func BubbleSort(list []int) []int {
 	for {
