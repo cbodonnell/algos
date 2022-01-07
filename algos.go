@@ -79,3 +79,11 @@ func partition(a []int, first int, last int, pivotIndex int) int {
 	a[first], a[right] = a[right], a[first]
 	return right
 }
+
+// Fibonacci returns the resulting fibonacci number n
+func Fibonacci(n int) int {
+	if n <= 1 {
+		return n
+	}
+	return Fibonacci(n-1) + Fibonacci(n-2)
+}

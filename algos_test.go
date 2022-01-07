@@ -58,3 +58,14 @@ func TestQuickSort(t *testing.T) {
 		t.Fatalf("%v is not equal to %v", testSort, sorted)
 	}
 }
+
+// TestFibonacci calls algos.Fibonacci with a an integer
+// and returns the cooresponding number in the sequence
+func TestFibonacci(t *testing.T) {
+	testCase := 7
+	expectedResult := 13
+	testResult := Fibonacci(testCase)
+	if testResult != expectedResult {
+		t.Fatalf("%d is not equal to %d", testResult, expectedResult)
+	}
+}
