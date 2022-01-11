@@ -19,12 +19,29 @@ func FindIndex(list []string, term string) int {
 	return -1
 }
 
+// ReverseString reverses the letters in a string
 func ReverseString(s string) string {
 	runes := []rune(s)
 	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
 		runes[i], runes[j] = runes[j], runes[i]
 	}
 	return string(runes)
+}
+
+// ReverseInt reverses a 32 bit integer.
+// Returns 0 if reversed integer overflows.
+func ReverseInt(x int) int {
+	var res int32
+	for x != 0 {
+		tail := int32(x) % 10
+		newRes := res*10 + tail
+		if (newRes-tail)/10 != res {
+			return 0
+		}
+		res = newRes
+		x = x / 10
+	}
+	return int(res)
 }
 
 // BubbleSort sorts a list of integers

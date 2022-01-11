@@ -69,3 +69,16 @@ func TestFibonacci(t *testing.T) {
 		t.Fatalf("%d is not equal to %d", testResult, expectedResult)
 	}
 }
+
+// TestReverseInt calls algos.ReverseInt with a 32-bit integer
+// and returns the reverse or 0 if the reversed integer overflows
+func TestReverseInt(t *testing.T) {
+	testCases := []int{1534236469, 123, -120}
+	expectedResults := []int{0, 321, -21}
+	for i, testCase := range testCases {
+		testResult := ReverseInt(testCase)
+		if testResult != expectedResults[i] {
+			t.Fatalf("%d is not equal to %d", testResult, expectedResults[i])
+		}
+	}
+}
