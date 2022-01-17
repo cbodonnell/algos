@@ -19,6 +19,20 @@ func FindIndex(list []string, term string) int {
 	return -1
 }
 
+// InsertAtIndex inserts the item into the array at index
+// and returns the modified array.
+func InsertAtIndex(list []string, item string, index int) []string {
+	list = append(list[:index+1], list[index:]...)
+	list[index] = item
+	return list
+}
+
+// RemoveAtIndex removes the item at index from the array
+// and returns the modified array.
+func RemoveAtIndex(list []string, index int) []string {
+	return append(list[:index], list[index+1:]...)
+}
+
 // ReverseString reverses the letters in a string
 func ReverseString(s string) string {
 	runes := []rune(s)

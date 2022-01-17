@@ -82,3 +82,24 @@ func TestReverseInt(t *testing.T) {
 		}
 	}
 }
+
+func TestInsertAtIndex(t *testing.T) {
+	testCase := []string{"one", "three"}
+	testItem := "two"
+	testIndex := 1
+	expectedResult := []string{"one", "two", "three"}
+	result := InsertAtIndex(testCase, testItem, testIndex)
+	if !reflect.DeepEqual(result, expectedResult) {
+		t.Fatalf("%v is not equal to %v", result, expectedResult)
+	}
+}
+
+func TestRemoveAtIndex(t *testing.T) {
+	testCase := []string{"one", "foo", "two", "three"}
+	testIndex := 1
+	expectedResult := []string{"one", "two", "three"}
+	result := RemoveAtIndex(testCase, testIndex)
+	if !reflect.DeepEqual(result, expectedResult) {
+		t.Fatalf("%v is not equal to %v", result, expectedResult)
+	}
+}
