@@ -8,6 +8,45 @@ import (
 	"math/rand"
 )
 
+// ListNode represents a node in a linked list
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
+// ReverseLinkedList reverses a linked list
+func ReverseLinkedList(head *ListNode) *ListNode {
+	var prev *ListNode
+	for head != nil {
+		next := head.Next
+		head.Next = prev
+		prev = head
+		head = next
+	}
+	return prev
+}
+
+// unlinkList converts a linked list into a slice
+func unlinkList(head *ListNode) (result []int) {
+	for head != nil {
+		result = append(result, head.Val)
+		head = head.Next
+	}
+	return result
+}
+
+// linkList converts a slice into a linked list
+func linkList(s []int) *ListNode {
+	var head *ListNode
+	for i := len(s) - 1; i >= 0; i-- {
+		head = &ListNode{
+			Val:  s[i],
+			Next: head,
+		}
+	}
+	return head
+}
+
 // FindIndex returns the index of a string in a list
 // or returns -1 if the string is not present in the list.
 func FindIndex(list []string, term string) int {

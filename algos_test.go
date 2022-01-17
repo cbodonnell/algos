@@ -103,3 +103,13 @@ func TestRemoveAtIndex(t *testing.T) {
 		t.Fatalf("%v is not equal to %v", result, expectedResult)
 	}
 }
+
+func TestReverseLinkedList(t *testing.T) {
+	testCase := linkList([]int{1, 2, 3, 4, 5, 6, 7})
+	expectedResultSlice := []int{7, 6, 5, 4, 3, 2, 1}
+	resultHead := ReverseLinkedList(testCase)
+	resultSlice := unlinkList(resultHead)
+	if !reflect.DeepEqual(resultSlice, expectedResultSlice) {
+		t.Fatalf("%v is not equal to %v", resultSlice, expectedResultSlice)
+	}
+}
