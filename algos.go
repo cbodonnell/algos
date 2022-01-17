@@ -32,19 +32,18 @@ func unlinkList(head *ListNode) (result []int) {
 		result = append(result, head.Val)
 		head = head.Next
 	}
-	return result
+	return
 }
 
 // linkList converts a slice into a linked list
-func linkList(s []int) *ListNode {
-	var head *ListNode
+func linkList(s []int) (head *ListNode) {
 	for i := len(s) - 1; i >= 0; i-- {
 		head = &ListNode{
 			Val:  s[i],
 			Next: head,
 		}
 	}
-	return head
+	return
 }
 
 // FindIndex returns the index of a string in a list
