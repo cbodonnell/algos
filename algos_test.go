@@ -5,10 +5,10 @@ import (
 	"testing"
 )
 
-// TestFindIndex calls algos.TestFindIndex with a list of strings
+// TestFindIndexLinear calls algos.TestFindIndex with a list of strings
 // and returns the index of the search term.
 // If the term is not in the list, -1 is returned.
-func TestFindIndex(t *testing.T) {
+func TestFindIndexLinear(t *testing.T) {
 	var haystack = []string{"Zig", "Zag", "Wally", "Ronald", "Bush", "Krusty",
 		"Charlie", "Bush", "Bozo", "Zag", "mouse", "hat", "cup", "deodorant",
 		"television", "soap", "methamphetamine", "severed cat heads", "foo",
@@ -34,6 +34,16 @@ func TestFindIndex(t *testing.T) {
 	testIndex = FindIndexLinear(haystack, term)
 	if testIndex != -1 {
 		t.Fatalf("%s index %d is not equal to %d\n", term, testIndex, index)
+	}
+}
+
+func TestFindIndexBinary(t *testing.T) {
+	sorted := []int{2, 3, 5, 7, 9}
+	testCase := 7
+	expected := 4
+	result := FindIndexBinary(sorted, testCase)
+	if result != expected {
+		t.Fatalf("%v is not equal to %v", result, expected)
 	}
 }
 
