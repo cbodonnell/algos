@@ -5,8 +5,23 @@ suited for general use in applications.
 package algos
 
 import (
+	"fmt"
 	"math/rand"
 )
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
+func (root *TreeNode) PreOrderTraversal() {
+	if root != nil {
+		fmt.Println(root.Val)
+		root.Left.PreOrderTraversal()
+		root.Right.PreOrderTraversal()
+	}
+}
 
 // ListNode represents a node in a linked list
 type ListNode struct {
