@@ -61,14 +61,37 @@ func linkList(s []int) (head *ListNode) {
 	return
 }
 
-// FindIndex returns the index of a string in a list
+// FindIndexLinear returns the index of a string in a list
 // or returns -1 if the string is not present in the list.
-func FindIndex(list []string, term string) int {
+func FindIndexLinear(list []string, term string) int {
 	for index, item := range list {
 		if item == term {
 			return index
 		}
 	}
+	return -1
+}
+
+// FindIndexBinary finds the index of an integer in a sorted list
+// or returns -1 if the integer is not present in the list
+func FindIndexBinary(list []int, item int) int {
+	lower, upper := 0, len(list)-1
+
+	for lower <= upper {
+		mid := (upper - lower) / 2
+		guess := list[mid]
+
+		if guess == item {
+			return mid
+		}
+
+		if guess > item {
+			upper = mid - 1
+		} else {
+			lower = mid + 1
+		}
+	}
+
 	return -1
 }
 

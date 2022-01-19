@@ -24,14 +24,14 @@ func TestFindIndex(t *testing.T) {
 
 	term := "needle"
 	index := 56
-	testIndex := FindIndex(haystack, term)
+	testIndex := FindIndexLinear(haystack, term)
 	if testIndex != 56 {
 		t.Fatalf("%s index %d is not %d\n", term, testIndex, index)
 	}
 
 	term = "nothing"
 	index = -1
-	testIndex = FindIndex(haystack, term)
+	testIndex = FindIndexLinear(haystack, term)
 	if testIndex != -1 {
 		t.Fatalf("%s index %d is not equal to %d\n", term, testIndex, index)
 	}

@@ -21,7 +21,7 @@ func main() {
 		"helium", "sulfur"}
 
 	term := "needle"
-	index := algos.FindIndex(haystack, term)
+	index := algos.FindIndexLinear(haystack, term)
 	if index > -1 {
 		fmt.Printf("Found %s at index %d\n", term, index)
 	} else {
