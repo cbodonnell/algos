@@ -78,7 +78,7 @@ func FindIndexBinary(list []int, item int) int {
 	lower, upper := 0, len(list)-1
 
 	for lower <= upper {
-		mid := (upper - lower) / 2
+		mid := (upper + lower) / 2
 		guess := list[mid]
 
 		if guess == item {

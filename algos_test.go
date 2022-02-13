@@ -40,7 +40,7 @@ func TestFindIndexLinear(t *testing.T) {
 func TestFindIndexBinary(t *testing.T) {
 	sorted := []int{2, 3, 5, 7, 9}
 	testCase := 7
-	expected := 4
+	expected := 3
 	result := FindIndexBinary(sorted, testCase)
 	if result != expected {
 		t.Fatalf("%v is not equal to %v", result, expected)
